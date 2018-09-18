@@ -1,3 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./assets/css/simple-grid.css";
-@import "./assets/css/owfont-regular.css";
+@import './assets/css/simple-grid.css';
+@import './assets/css/owfont-regular.css';
+:root {
+  --white: #fdfffc;
+  --blue: #2ec4b6;
+  --pink: #e71d36;
+  --yellow: #ff9f1c;
+  --primary: #011627;
+  //theme
+  --bg: white;
+  --text-color: #555;
+  --link-color: #639a67;
+  --link-hover: #205d67;
+}
+body {
+  background: var(--bg);
+  color: var(--text-color);
+}
+
+a,
+a:link {
+  color: var(--link-color);
+}
+a:hover {
+  color: var(--link-hover);
+}
+.funky {
+  --bg: hotpink;
+  --text-color: white;
+  --link-color: #b793e6;
+  --link-hover: #3532a7;
+}

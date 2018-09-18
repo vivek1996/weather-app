@@ -22,7 +22,8 @@ body {
 
 * {
   font-family: 'Lato', Helvetica, sans-serif;
-  color: #333447;
+  /* color: #333447; */
+  color: #011627;
   line-height: 1.5;
 }
 

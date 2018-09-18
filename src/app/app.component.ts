@@ -7,6 +7,7 @@ import { WeatherService } from './weather.service';
 })
 export class AppComponent implements OnInit {
   userPosition: any;
+  darkTheme = false;
   constructor(private _http: WeatherService) {}
   ngOnInit() {
     this.findMe();
@@ -27,6 +28,21 @@ export class AppComponent implements OnInit {
       });
     } else {
       alert('Geolocation is not supported by this browser.');
+    }
+  }
+  switch(e) {
+    if (localStorage.getItem('funky')) {
+      document.body.classList.add('funky');
+      e.innerText = 'Turn theme off';
+    }
+    if (document.body.classList.contains('funky')) {
+      document.body.classList.remove('funky');
+      e.innerText = 'Turn theme on';
+      localStorage.removeItem('funky');
+    } else {
+      document.body.classList.add('funky');
+      e.innerText = 'Turn theme off';
+      localStorage.setItem('funky', true);
     }
   }
 }

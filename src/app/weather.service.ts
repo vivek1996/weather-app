@@ -12,7 +12,7 @@ export class WeatherService {
     return this.http.get(
       `${this.url}?${this.key}&lat=${position.coords.latitude}&lon=${
         position.coords.longitude
-      }`
+      }&units=metric`
     );
   }
 }
