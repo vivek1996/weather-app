@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     } else {
       document.body.classList.add('funky');
       e.innerText = 'Turn theme off';
-      localStorage.setItem('funky', true);
+      localStorage.setItem('funky', 'true');
     }
   }
 }
