@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   findMe() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        console.log(position);
         this._http.getByCoord(position).subscribe(
           data => {
             this.userPosition = data;
