@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "gh-pages -d dist/weather"
+    "deploy": "ng build --prod --build-optimizer && gh-pages -d dist/weather"
   },
   "private": true,
   "dependencies": {
