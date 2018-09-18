@@ -3,9 +3,13 @@ import { NgModule } from '@angular/core';
 import { WeatherService } from './weather.service';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { SearchboxComponent } from './searchbox/searchbox.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherCardComponent,
+    SearchboxComponent
   ],
   imports: [
     BrowserModule,
