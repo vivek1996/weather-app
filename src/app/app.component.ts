@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { WeatherService } from './weather.service';
 @Component({
   selector: 'app-root',
@@ -8,9 +8,12 @@ import { WeatherService } from './weather.service';
 export class AppComponent implements OnInit {
   userPosition: any;
   darkTheme = false;
-  constructor(private _http: WeatherService) {}
+  constructor(private _http: WeatherService, private renderer: Renderer2) {}
   ngOnInit() {
     this.findMe();
+    if (localStorage.getItem('dark')) {
+      this.switch();
+    }
   }
 
   findMe() {
@@ -30,19 +33,31 @@ export class AppComponent implements OnInit {
       alert('Geolocation is not supported by this browser.');
     }
   }
-  switch(e) {
-    if (localStorage.getItem('funky')) {
-      document.body.classList.add('funky');
-      e.innerText = 'Turn theme off';
-    }
-    if (document.body.classList.contains('funky')) {
-      document.body.classList.remove('funky');
-      e.innerText = 'Turn theme on';
-      localStorage.removeItem('funky');
+  // Direct access to the DOM
+  // switch(e) {
+  //   if (localStorage.getItem('funky')) {
+  //     document.body.classList.add('funky');
+  //     e.innerText = 'Turn theme off';
+  //   }
+  //   if (document.body.classList.contains('funky')) {
+  //     document.body.classList.remove('funky');
+  //     e.innerText = 'Turn theme on';
+  //     localStorage.removeItem('funky');
+  //   } else {
+  //     document.body.classList.add('funky');
+  //     e.innerText = 'Turn theme off';
+  //     localStorage.setItem('funky', 'true');
+  //   }
+  // }
+  // Access via Angular
+  switch() {
+    this.darkTheme = !this.darkTheme;
+    if (document.body.classList.contains('dark')) {
+      this.renderer.removeClass(document.body, 'dark');
+      localStorage.removeItem('dark');
     } else {
-      document.body.classList.add('funky');
-      e.innerText = 'Turn theme off';
-      localStorage.setItem('funky', 'true');
+      this.renderer.addClass(document.body, 'dark');
+      localStorage.setItem('dark', 'true');
     }
   }
 }
