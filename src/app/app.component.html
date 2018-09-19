@@ -9,13 +9,23 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12">
-      <!-- <p>{{weatherData | json}}</p> -->
-      <app-weather-card [weather]="weatherData"></app-weather-card>
-      <i class="owf owf-302 owf-5x"></i>
-      <label class="switch"><input type="checkbox" id="togBtn">
-        <div class="slider round"></div>
-      </label>
+    <div  *ngIf="!weatherData"  class="col-12">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+          </div>
     </div>
-  </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <app-searchbox></app-searchbox>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-weather-card [weather]="weatherData"></app-weather-card>
+         </div>
+    </div>
 </div>

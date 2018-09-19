@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   darkTheme = false;
   constructor(private _http: WeatherService, private renderer: Renderer2) {}
   ngOnInit() {
-    this.findMe();
+   // this.findMe();
     if (localStorage.getItem('dark')) {
       this.switchTheme();
     }
