@@ -5,13 +5,13 @@
       <h6 class="m-0">Get the weather report</h6>
     </div>
     <div class="col-3 right">
-      <button class="toggle-theme" (click)="switch()"> {{ darkTheme ? 'Light': 'Dark' }} </button>
+      <button class="toggle-theme" (click)="switchTheme()"> {{ darkTheme ? 'Light': 'Dark' }} </button>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
-      <h4>{{userPosition | json}}</h4>
-      <app-weather-card></app-weather-card>
+      <!-- <p>{{weatherData | json}}</p> -->
+      <app-weather-card [weather]="weatherData"></app-weather-card>
       <i class="owf owf-302 owf-5x"></i>
       <label class="switch"><input type="checkbox" id="togBtn">
         <div class="slider round"></div>

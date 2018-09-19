@@ -6,13 +6,13 @@ import { WeatherService } from './weather.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  userPosition: any;
+  weatherData: any;
   darkTheme = false;
   constructor(private _http: WeatherService, private renderer: Renderer2) {}
   ngOnInit() {
     this.findMe();
     if (localStorage.getItem('dark')) {
-      this.switch();
+      this.switchTheme();
     }
   }
 
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position => {
         this._http.getByCoord(position).subscribe(
           data => {
-            this.userPosition = data;
+            this.weatherData = data;
             console.log(data);
           },
           error => {
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
   //   }
   // }
   // Access via Angular
-  switch() {
+  switchTheme() {
     this.darkTheme = !this.darkTheme;
     if (document.body.classList.contains('dark')) {
       this.renderer.removeClass(document.body, 'dark');
