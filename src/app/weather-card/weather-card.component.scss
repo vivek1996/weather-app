@@ -1,70 +1,81 @@
 // Slider css
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 6em;
-    height: 2.5em;
-  }
+  position: relative;
+  display: inline-block;
+  width: 6em;
+  height: 2.5em;
+}
 
-  .switch input {
-    display: none;
-  }
+.switch input {
+  display: none;
+}
 
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: white;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-    border-radius: 99999px;
-    border: 1px solid #2196f3;
-  }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  border-radius: 99999px;
+  border: 1px solid #2196f3;
+}
 
-  .slider::before {
-    position: absolute;
-    content: '';
-    height: 1.5em;
-    width: 1.5em;
-    left: 0.45em;
-    bottom: 0.45em;
-    background-color: rgb(245, 18, 105);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-    border-radius: 50%;
-    border: 1px solid rgba(20, 23, 26, 0.835);
-  }
+.slider::before {
+  position: absolute;
+  content: '';
+  height: 1.5em;
+  width: 1.5em;
+  left: 0.45em;
+  bottom: 0.45em;
+  background-color: rgb(245, 18, 105);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  border-radius: 50%;
+  border: 1px solid rgba(20, 23, 26, 0.835);
+}
 
-  input:checked + .slider {
-    background-color: #27aae1;
-  }
+input:checked + .slider {
+  background-color: #27aae1;
+}
 
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196f3;
-  }
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
 
-  input:checked + .slider::before {
-    transform: translateX(3.6em);
-  }
+input:checked + .slider::before {
+  transform: translateX(3.6em);
+}
 
-  .slider::after {
-    content: 'C';
-    color: black;
-    display: block;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    transition: 0.2s;
-    top: 50%;
-    left: 50%;
-    font-size: 0.7em;
-  }
+.slider::after {
+  content: 'C';
+  color: black;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+  top: 50%;
+  left: 50%;
+  font-size: 0.7em;
+}
 
-  input:checked + .slider::after {
-    content: 'F';
-    color: white;
-  }
+input:checked + .slider::after {
+  content: 'F';
+  color: white;
+}
 
 //  End slider
+
+// Card
+.card {
+  width: 80%;
+  height: 8rem;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 26px 21px 15px -13px rgba(22, 22, 22, 0.287);
+}

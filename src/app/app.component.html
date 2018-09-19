@@ -1,31 +1,31 @@
 <div class="container">
   <div class="row">
     <div class="col-12 center">
-      <h1 class="heading font-regular m-0">Weather</h1>
-      <h6 class="m-0">Get the weather report</h6>
+      <h1 class="heading font-regular m-0">Weather <i class="owf owf-231 text-blue"></i></h1>
+      <h6 class="m-0">Get the weather report done instantly!</h6>
     </div>
     <div class="col-3 right">
       <button class="toggle-theme" (click)="switchTheme()"> {{ darkTheme ? 'Light': 'Dark' }} </button>
     </div>
   </div>
   <div class="row">
-    <div  *ngIf="!weatherData"  class="col-12">
-        <div class="sk-folding-cube">
-            <div class="sk-cube1 sk-cube"></div>
-            <div class="sk-cube2 sk-cube"></div>
-            <div class="sk-cube4 sk-cube"></div>
-            <div class="sk-cube3 sk-cube"></div>
-          </div>
-    </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <app-searchbox></app-searchbox>
+    <div *ngIf="!weatherData" class="col-12">
+      <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
       </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <app-weather-card [weather]="weatherData"></app-weather-card>
-         </div>
+  </div>
+  <div class="row">
+    <div class="col-11 center">
+      <app-searchbox></app-searchbox>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-weather-card [weather]="weatherData"></app-weather-card>
+    </div>
+  </div>
 </div>
