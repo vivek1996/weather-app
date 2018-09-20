@@ -79,3 +79,72 @@ input:checked + .slider::after {
   display: flex;
   box-shadow: 26px 21px 15px -13px rgba(22, 22, 22, 0.287);
 }
+/// 
+
+.weather-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 5px;
+    border-radius: 20px;
+    // position: relative;
+    overflow: hidden;
+    width: 50%;
+    height: auto;
+    background-color: $color2;
+    box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+    animation: appear 500ms ease-out forwards;
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.weather-icon {
+    margin-top: 1.5rem;
+    animation: weather-icon-move 5s ease-in-out infinite;
+    .fa {
+        font-size: 3rem;
+    }
+}
+
+@keyframes weather-icon-move {
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    75% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes title-appear {
+    from {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
